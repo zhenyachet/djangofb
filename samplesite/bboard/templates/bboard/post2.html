@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Post Json</title>
+</head>
+<body>
+<form action="{% url 'json_create_urlnew'%}" method = "post">
+    <p>Input Json to the textedit:</p>
+    {% csrf_token %}
+       {% for message in messages %}
+            {% if messages %}
+      <h2>      {{ message }} </h2>
+            {% endif %}
+       {% endfor %}
+
+    {% for field in form %}
+        {% if field.errors %}
+            Error: {{ field.errors }}
+        {% endif %}
+    {% endfor %}
+    {{ form.JsonDatoForread }}
+<p><button type="submit">POST</button></p>
+    <p><a href="/bboard/">Back to Homepage</a></p>
+
+</form>
+</body>
+</html>

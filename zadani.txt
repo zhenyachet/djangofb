@@ -1,0 +1,37 @@
+Zadání: 
+
+Podívej se na json soubor test_data.json. Jsou tam data ve následujícím formátu:
+
+[
+  {
+    "nazev modelu 1": {
+      "sloupec 1": "data",
+      "sloupec 2": ["pole", "dat"]
+    }
+  },
+  {
+    "nazev modelu 2": {
+      "sloupec 1": "data",
+    }
+  },
+  {
+    "nazev modelu 1": {
+      "sloupec 1": "data",
+    }
+  }
+]
+
+
+Tvým úkolem je vytvořit modely a API v djangu, které bude příjimat tento JSON formát dat, zparsuje jej a bude mít následující endpointy pro přístup k těmto datům.
+
+Endpointy:
+[POST] /import/ - tento endpoint bude příjímat a parsovat data, je dostupný jen pro přihlášeného uživatele
+[GET] /detail/<nazev modelu>/ - seznam záznamů na základě názvu modelu, endpoint je veřejně dostupný
+[GET] /detail/<nazev modelu>/<id>/ - všechna data ke konkrétnímu záznamu, endpoint je veřejně dostupný
+
+
+Připrav pro modely také Django administraci, aby pak bylo možné vidět přehledně data, která jsou v aplikaci.
+
+Doporučení:
+- Piš to s předpokladem, že ten kód bude někdo číst, ujisti se, že špatný formát dat nezpůsobí v aplikaci chybu.
+- Když budeš aplikaci posílat, vydefinuj requirements a jednoduchý postup, jak aplikaci spustit.

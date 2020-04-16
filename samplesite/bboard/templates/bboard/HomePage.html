@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home page</title>
+</head>
+<body>
+{% if request.user.is_authenticated %}
+<p><a href="import">Input data</a></p>
+{% endif %}
+<a href="detail">Request data</a>
+<p>
+
+{% if request.user.is_authenticated %}
+    You're loged in {{user.username}}
+<p><a href="logout">Logout</a></p>
+</p>
+{% else %}
+<a href="register">Registration</a>
+<a href="login">Authorisation</a>
+{% endif %}
+
+
+</body>
+</html>

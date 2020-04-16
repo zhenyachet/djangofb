@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form action="{% url 'GetDataFromJson'%}" >
+ <p><label>Input model's name</label><input type="text", name="textrequest1"></p>
+    <p><button>Searching</button></p><p><a href="/bboard/">Back to Homepage</a></p>
+
+    <p>Json format string:</p>
+    <textarea rows="5" cols="150">{{ dataafterjson }}</textarea><br>
+<p>   List of modules {{ search_query }}:<br></p>
+
+    {% for data in datas %}
+    <p>
+    {{data.AttributeName}}
+    <a href="{% url 'Searching_detail_url' AttributeName=data.AttributeName id=data.AttributeID %}">{{ data.AttributeID }}</a>
+    </p>
+    {% endfor %}
+
+
+</form>
+</body>
+</html>

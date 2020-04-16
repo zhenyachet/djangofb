@@ -1,0 +1,57 @@
+1. Install Python. It can be installed from the website in here: https://www.python.org/downloads/
+2. Installation django and open the project
+2.1. Installation pip. 
+2.1.1 Open the Command line. It can be done if typewrite the CMD in searching textfield. Then copied this link into command line:
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+2.1.2 Then copied this link into command line:
+python get-pip.py
+2.2. Installation virtualenwrapper. Copy this link into the command line:
+pip install virtualenvwrapper
+2.3 Creation of virtual environments. Copy this link into the command line:
+python -m venv c:\path\to\myenv
+2.4 Installing Django. Copy this link into the command line:
+python -m pip install Django
+2.5 Copy directory djangofb to C:/ or in another place
+2.6 Open djangofb directory from C:/ (it can be done if you using commands 1) cd "name of directory" 2) cd.. for step to the parent's directory) in the command line
+2.7 Open samplesite
+2.8 Run server which can be done if copied command in the command line:
+manage.py runserver 
+
+How to use application
+
+Home page opened in url: 
+http://localhost:8000/bboard/ (automated redirect to app)
+1) Ednpoint /import
+Input the Json format string in format:[
+  {
+    "nazev modelu 1": {
+      "sloupec 1": "data",
+      "sloupec 2": ["pole", "dat"]
+    }
+  },
+  {
+    "nazev modelu 2": {
+      "sloupec 1": "data",
+    }
+  },
+  {
+    "nazev modelu 1": {
+      "sloupec 1": "data",
+    }
+  }
+]
+ Parced it and save in database.
+This endpoind available only for users who are registered and logged in
+
+2) Ednpoint /detail
+This endpoint return list of models which user write in text edit.
+
+3) Endpoint /detail/<id>
+This endpoint return content which contain every single model.
+
+
+
+
+
+
+

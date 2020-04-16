@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/new_user" method = post>
+    <input type="text">
+    <input type="submit">
+</form>
+<div class="container">
+    {% for post in posts %}
+    <p>
+    {{post.AttributeContent}}
+    </p>
+    {% endfor %}
+
+</div>
+
+
+</body>
+</html>
